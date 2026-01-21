@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper,openany]{book}
+
+% ==================== 宏包导入 ====================
+\usepackage[UTF8]{ctex}                    % 中文支持
+\usepackage{geometry}                      % 页面设置
+\usepackage{amsmath,amssymb,amsthm}       % 数学支持
+\usepackage{graphicx}                      % 图片支持
+\usepackage{tikz}                          % 绘图支持
+\usetikzlibrary{positioning}              % TikZ 定位库
+\usepackage{booktabs}                      % 三线表
+\usepackage{longtable}                     % 跨页表格
+\usepackage{multirow}                      % 表格合并行
+\usepackage{array}                         % 表格增强
+\usepackage{caption}                       % 标题设置
+\usepackage{subcaption}                    % 子图支持
+\usepackage{float}                         % 浮动体控制
+\usepackage{xcolor}                        % 颜色支持
+\usepackage{hyperref}                      % 超链接支持
+\usepackage{fancyhdr}                      % 页眉页脚
+\usepackage{setspace}                      % 行距设置
+\usepackage{titlesec}                      % 标题格式
+\usepackage{tocloft}                       % 目录格式
+\usepackage{tikz}
+\usetikzlibrary{calc,arrows.meta,positioning}
+
+% ==================== 页面设置 ====================
+\geometry{
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm,
+    headheight=15pt
+}
+
+% ==================== 超链接设置 ====================
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=blue,
+    urlcolor=blue,
+    bookmarksnumbered=true,
+    pdfstartview=FitH
+}
+
+% ==================== 页眉页脚设置 ====================
+\pagestyle{plain}  % 使用plain样式：仅在页脚显示页码
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[LE,RO]{\thepage}
+% \fancyhead[RE]{\leftmark}
+% \fancyhead[LO]{\rightmark}
+% \renewcommand{\headrulewidth}{0.4pt}
+
+% ==================== 标题格式设置 ====================
+\titleformat{\chapter}[hang]
+    {\normalfont\huge\bfseries}{第\ \thechapter\ 章}{1em}{\Huge}
+\titleformat{\section}
+    {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+    {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+    {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+
+% 设置章节编号深度（使subsubsection显示编号）
+\setcounter{secnumdepth}{3}
+% 设置目录深度（使subsubsection显示在目录中）
+\setcounter{tocdepth}{3}
+
+% ==================== 行距设置 ====================
+\onehalfspacing
+
+% ==================== 定理环境设置 ====================
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}[theorem]{例}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注}
+
+% ==================== 文档信息 ====================
+\title{\textbf{保险精算实务（草稿）}}
+\author{作者姓名}
+\date{\today}
+
+% ==================== 正文开始 ====================
+\begin{document}
+
+% 封面
+\frontmatter
+\maketitle
+
+% 目录
+\tableofcontents
+
+% 正文
+\mainmatter
+
+%\include{ch1}
+\include{ch2}
+%\include{ch3}
+
+% 附录
+\appendix
+% \chapter{附录标题}
+% 附录内容
+
+% 参考文献
+\backmatter
+\bibliographystyle{plain}
+% \bibliography{references}
+
+\end{document}
